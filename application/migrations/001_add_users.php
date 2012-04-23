@@ -45,10 +45,21 @@ class Migration_add_users extends CI_Migration
 		));
 		
 		$this->dbforge->add_key('id', TRUE);
-		$this->dbforge->create_table('users');
 		
-		// Insert demo user
-		$this->db->insert('users', array('username' => 'admin', 'password' => sha1('password'), 'created_at' => date('Y-m-d H:i:s')));
+		if($this->dbforge->create_table('users'))
+		{
+			// Insert admin in the users Model
+			$this->load->model('users_model');
+			$user = array(
+				'username' => 'admin',
+				'password' => 'password'
+			);
+			$this->users_model->insert($user);
+		}
+		else
+		{
+			show_error('The users table could not be created');
+		}
 	}
 
 	public function down()
