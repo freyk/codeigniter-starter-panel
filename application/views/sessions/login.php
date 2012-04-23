@@ -13,17 +13,17 @@
 		<h2>Login</h2>
 		<fieldset>
 			<div>
-				<label>Username</label>
+				<label for="username">Username</label>
 				<input type="text" name="username" value="<?php echo set_value('username'); ?>" id="username">
 			</div>
 		
 			<div>
-				<label>Password</label>
+				<label for="password">Password</label>
 				<input type="password" name="password" value="" id="password">
 			</div>
 		
 			<div style="margin-left:250px">
-				<input type="submit" name="enter" value="Entrar" class="btn_grey" />
+				<input type="submit" name="enter" value="Login" class="btn_grey">
 			</div>
 			
 			<?php if(isset($error)): ?>
