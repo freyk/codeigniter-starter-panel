@@ -1,6 +1,6 @@
 # Codeigniter Starter panel
 
-Codeigniter is the set of libraries and configurations for starting empty project with Administration Panel.
+Codeigniter Starter Panel is the set of libraries and configurations for starting empty project with Administration Panel.
 
 ## Sources
 * Sparks (getsparks.org)
