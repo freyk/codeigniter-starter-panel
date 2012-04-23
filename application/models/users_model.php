@@ -82,7 +82,7 @@ class Users_model extends CI_Model
 	private function validate_data($data = array())
 	{
 		if(isset($data['password'])) $data['password'] = $this->encryption_mode($data['password']);
-		if(isset($data['email'])) $data['email'] = mb_convert_case($data['email'], MB_CASE_LOWER);
+		if(isset($data['username'])) $data['username'] = mb_convert_case($data['username'], MB_CASE_LOWER);
 		
 		return $data;
 	}
