@@ -1,5 +1,6 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access');
 
-class MY_Controller extends CI_Controller{}
+/* load the Admin_controller for extends in all Controllers */
+require APPPATH."core/Admin_controller.php";
 
-require APPPATH.'core/Admin_controller'.EXT;
+class MY_Controller extends CI_Controller{}
