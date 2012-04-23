@@ -1,6 +1,6 @@
 # Codeigniter Starter panel
 
-Codeigniter Starter Panel is the set of libraries and configurations for starting empty project with Administration Panel.
+Codeigniter Starter Panel is a simple and full customizable Administration panel include flexible Authentication mode.
 
 ## Sources
 * Sparks (getsparks.org)
