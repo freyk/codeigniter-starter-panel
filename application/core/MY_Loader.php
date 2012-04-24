@@ -4,10 +4,10 @@
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
- * @package		CodeIgniter
- * @author		CodeIgniter Reactor Dev Team
+ * @package     CodeIgniter
+ * @author      CodeIgniter Reactor Dev Team
  * @author      Kenny Katzgrau <katzgrau@gmail.com>
- * @since		CodeIgniter Version 1.0
+ * @since       CodeIgniter Version 1.0
  * @filesource
  */
 
@@ -16,12 +16,12 @@
  *
  * Loads views and files
  *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @author		CodeIgniter Reactor Dev Team
+ * @package     CodeIgniter
+ * @subpackage  Libraries
+ * @author      CodeIgniter Reactor Dev Team
  * @author      Kenny Katzgrau <katzgrau@gmail.com>
- * @category	Loader
- * @link		http://codeigniter.com/user_guide/libraries/loader.html
+ * @category    Loader
+ * @link        http://codeigniter.com/user_guide/libraries/loader.html
  */
 class MY_Loader extends CI_Loader
 {
@@ -143,28 +143,28 @@ class MY_Loader extends CI_Loader
         return true;
     }
 
-	/**
-	 * Pre-CI 2.0.3 method for backward compatility.
-	 *
-	 * @param null $basepath
-	 * @return void
-	 */
-	function _ci_autoloader($basepath = NULL)
-	{
-		$this->ci_autoloader($basepath);
-	}
+    /**
+     * Pre-CI 2.0.3 method for backward compatility.
+     *
+     * @param null $basepath
+     * @return void
+     */
+    function _ci_autoloader($basepath = NULL)
+    {
+        $this->ci_autoloader($basepath);
+    }
 
-	/**
-	 * Specific Autoloader (99% ripped from the parent)
-	 *
-	 * The config/autoload.php file contains an array that permits sub-systems,
-	 * libraries, and helpers to be loaded automatically.
-	 *
-	 * @param array|null $basepath
-	 * @return void
-	 */
-	function ci_autoloader($basepath = NULL)
-	{
+    /**
+     * Specific Autoloader (99% ripped from the parent)
+     *
+     * The config/autoload.php file contains an array that permits sub-systems,
+     * libraries, and helpers to be loaded automatically.
+     *
+     * @param array|null $basepath
+     * @return void
+     */
+    function ci_autoloader($basepath = NULL)
+    {
         if($basepath !== NULL)
         {
             $autoload_path = $basepath.'config/autoload'.EXT;
@@ -179,12 +179,12 @@ class MY_Loader extends CI_Loader
             return FALSE;
         }
 
-		include($autoload_path);
+        include($autoload_path);
 
-		if ( ! isset($autoload))
-		{
-			return FALSE;
-		}
+        if ( ! isset($autoload))
+        {
+            return FALSE;
+        }
 
         if($this->_is_lt_210 || $basepath !== NULL)
         {
@@ -199,13 +199,13 @@ class MY_Loader extends CI_Loader
         }
 
         // Autoload sparks
-		if (isset($autoload['sparks']))
-		{
-			foreach ($autoload['sparks'] as $spark)
-			{
-				$this->spark($spark);
-			}
-		}
+        if (isset($autoload['sparks']))
+        {
+            foreach ($autoload['sparks'] as $spark)
+            {
+                $this->spark($spark);
+            }
+        }
 
         if($this->_is_lt_210 || $basepath !== NULL)
         {
@@ -261,5 +261,5 @@ class MY_Loader extends CI_Loader
                 $this->model($autoload['model']);
             }
         }
-	}
+    }
 }
