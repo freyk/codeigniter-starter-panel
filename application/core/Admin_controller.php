@@ -9,12 +9,14 @@ class Admin_controller extends CI_Controller
 		
 		$this->load->spark('template/1.9.0');
 		
+		/* Url to redirect if not logged */
+		$url_login = 'sessions/login';
+		
 		if(! $this->logged_user = $this->users_model->get())
 		{
-			// Redirect when not logged and send Ajax requests
-			if($this->input->is_ajax_request()) echo '<script> window.location = "'.site_url('sessions/login').'"</script>';
-			
-			redirect('sessions/login');
+			/* Redirect in Ajax requests */
+			if($this->input->is_ajax_request()) echo '<script> window.location = "'.site_url($url_login).'"</script>';
+			redirect($url_login);
 		}
 		
 		/* Load layouts */
