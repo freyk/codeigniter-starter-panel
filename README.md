@@ -15,7 +15,7 @@ Codeigniter Starter Panel is a simple and full customizable Administration panel
 4. Congratulations the Starter Panel run!
 
 ## Basic usage
-All controllers extends the Admin_controller for restrict access.
+All controllers extends to Admin_controller for restrict access.
 
 ### Example
 
