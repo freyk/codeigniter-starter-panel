@@ -46,9 +46,9 @@ class Migration_add_users extends CI_Migration
         
         $this->dbforge->add_key('id', TRUE);
         
-        if($this->dbforge->create_table('users'))
+        if ($this->dbforge->create_table('users'))
         {
-            // Insert admin in the users Model
+            // Insert user admin
             $this->load->model('users_model');
             $user = array(
                 'username' => 'admin',

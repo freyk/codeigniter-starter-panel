@@ -26,7 +26,7 @@
                 <input type="submit" name="enter" value="Login" class="btn_grey">
             </div>
             
-            <?php if(isset($error)): ?>
+            <?php if (isset($error)): ?>
             <div><?php echo $error ?></div>
             <?php endif ?>
         </fieldset>

@@ -12,10 +12,10 @@ class Admin_controller extends CI_Controller
         /* Url to redirect if not logged */
         $url_login = 'sessions/login';
         
-        if(! $this->logged_user = $this->users_model->get())
+        if ( ! $this->logged_user = $this->users_model->get())
         {
             /* Redirect in Ajax requests */
-            if($this->input->is_ajax_request()) echo '<script> window.location = "'.site_url($url_login).'"</script>';
+            if ($this->input->is_ajax_request()) echo '<script> window.location = "'.site_url($url_login).'"</script>';
             redirect($url_login);
         }
         

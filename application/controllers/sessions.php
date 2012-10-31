@@ -2,7 +2,7 @@
 
 class Sessions extends CI_Controller
 {
-    var $data;
+    private $data;
     
     public function __construct()
     {
@@ -15,9 +15,9 @@ class Sessions extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'trim');
         
-        if($this->form_validation->run())
+        if ($this->form_validation->run())
         {
-            if($this->users_model->try_login($this->input->post('username'), $this->input->post('password')))
+            if ($this->users_model->try_login($this->input->post('username'), $this->input->post('password')))
             {
                 redirect('/');
             }
@@ -27,8 +27,7 @@ class Sessions extends CI_Controller
             }
         }
         
-        $this->template->set_layout(FALSE)
-                       ->build('sessions/login', $this->data);
+        $this->template->set_layout(FALSE)->build('sessions/login', $this->data);
     }
     
     public function logout()
