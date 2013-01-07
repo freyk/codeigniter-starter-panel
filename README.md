@@ -9,7 +9,7 @@ Codeigniter Starter Panel is a simple and full customizable Administration panel
 * CSS3 PIE (Jason Johnston)
 
 ## Install
-1. Copy Codeigniter-Starter-Panel folder in your web root directory
+1. Copy the project in your web root directory
 2. Configure DB Settings in application/config/database.php
 3. Run migrations http://localhost/your-folder/index.php/migrate
 4. Congratulations the Starter Panel run!
