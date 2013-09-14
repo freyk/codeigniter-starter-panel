@@ -4,6 +4,8 @@ class Migration_add_users extends CI_Migration
 {
     public function up()
     {
+        $this->dbforge->drop_table('users');
+
         $this->dbforge->add_field(array(
             'id' => array(
                 'type' => 'INT',
@@ -31,8 +33,7 @@ class Migration_add_users extends CI_Migration
             'last_login_ip' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 45,
-                'null' => TRUE,
-                'default' => NULL
+                'null' => TRUE
             ),
             'created_at' => array(
                 'type' => 'DATETIME',
@@ -43,17 +44,19 @@ class Migration_add_users extends CI_Migration
                 'null' => TRUE
             ),
         ));
-        
+
         $this->dbforge->add_key('id', TRUE);
-        
-        if ($this->dbforge->create_table('users'))
+
+        if ($this->dbforge->create_table('users', TRUE))
         {
             // Insert user admin
             $this->load->model('users_model');
+
             $user = array(
                 'username' => 'admin',
                 'password' => 'password'
             );
+
             $this->users_model->insert($user);
         }
         else
