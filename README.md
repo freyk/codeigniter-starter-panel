@@ -3,7 +3,7 @@
 Codeigniter Starter Panel is a simple and full customizable Administration panel include flexible Authentication mode.
 
 ## Sources
-* Codeigniter 2.1.3
+* Codeigniter 2.1.4
 * Sparks (getsparks.org)
 * Template Library (Philsturgeon)
 * CSS3 PIE (Jason Johnston)
@@ -22,7 +22,7 @@ All controllers extends to Admin_controller for restrict access.
 
     <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-    class ControllerName extends Admin_controller
+    class Controller_name extends Admin_controller
     {
 
         public function index()
