@@ -11,7 +11,7 @@ Codeigniter Starter Panel is a simple and full customizable Administration panel
 ## Install
 1. Copy the project in your web root directory
 2. Configure DB Settings in application/config/database.php
-3. Run migrations http://localhost/your-folder/index.php/migrate
+3. The first time to access at your application, the migrations run automatically
 4. Congratulations the Starter Panel run!
 5. Access with **username:** admin **password:** password
 
@@ -31,7 +31,7 @@ All controllers extends to Admin_controller for restrict access.
         }
     }
 
-When you run the migration create the following table:
+The users table use the following structure:
 
     CREATE TABLE `users` (
       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -39,10 +39,10 @@ When you run the migration create the following table:
       `password` varchar(255) NOT NULL,
       `active` tinyint(1) NOT NULL DEFAULT '1',
       `last_login` datetime DEFAULT NULL,
-      `last_login_ip` varchar(45) DEFAULT '',
+      `last_login_ip` varchar(45) DEFAULT NULL,
       `created_at` datetime DEFAULT NULL,
       `updated_at` datetime DEFAULT NULL,
       PRIMARY KEY (`id`)
     );
 
-After run migration your can alter the users table
+After run migration you can alter the users table.
