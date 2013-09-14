@@ -22,3 +22,4 @@ class MY_Controller extends CI_Controller
 
 /* Load the Admin_Controller for extends in all Controllers */
 require APPPATH.'core/Admin_Controller.php';
+require APPPATH.'core/Public_Controller.php';
